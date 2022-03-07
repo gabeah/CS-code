@@ -1,0 +1,33 @@
+Gabe Howland
+Homework 5
+
+The values I got for gridpi with inputs 10, 100, 1000, 10,000 are as follows:
+
+10: 	3.44
+100:	3.1796
+1000: 	3.14552
+10,000: 3.14199
+
+The time that each rendition would take:
+10:	O(10^2)
+100: 	O(100^2)
+1000: 	O(1000^2)
+10,000: O(10,000^2)
+
+Actual runtimes
+10: 	0m1.770s
+100: 	0m1.815s
+1000:	0m1.964s
+10,000: 0m4.550s
+
+New runtimes with constexpr:
+10: 	0m1.132s
+100: 	0m2.746s
+1000:	0m1.826s
+10,000: 0m3.912s
+
+New Values with constexpr:
+10: 	3.44
+100: 	3.1796
+1000:	3.14552
+10,000:	3.14199
