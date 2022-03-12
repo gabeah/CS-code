@@ -7,6 +7,7 @@ create_tree(const key_type& key,
             tree_ptr_t left,
             tree_ptr_t right)
 {
+    new Tree = ({key, value, left, right})
 }
 
 
@@ -14,6 +15,9 @@ create_tree(const key_type& key,
 void
 destroy_tree(tree_ptr_t tree)
 {
+    while(!tree->left){
+        tree = tree->left
+    }
 }
 
 
