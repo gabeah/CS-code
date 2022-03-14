@@ -15,9 +15,16 @@ create_tree(const key_type& key,
 void
 destroy_tree(tree_ptr_t tree)
 {
-    while(!tree->left){
-        tree = tree->left
-    }
+	int* current = tree;
+	int* temp = tree;
+	if(!tree -> left){
+		temp = tree -> left;
+		destroy_tree(tree_prt_t temp);
+    	}
+	current = temp;
+	if(!tree -> right){
+		temp = tree -> right;
+	}
 }
 
 
