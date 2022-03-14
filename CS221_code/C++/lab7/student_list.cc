@@ -92,9 +92,9 @@ void delete_list8(Student* head) // Bad? this one works
 int main()
 {
   Student* lst;
-  lst->name_ = "whoami"; // Bad: it points to the structure, not calling for new space
-  delete lst;            // Bad: trying to delete something that hasnt been initialized
-  delete_list1(lst);     // Bad: same as above, but also lst is uninitialized
+  //lst->name_ = "whoami"; // Bad: it points to the structure, not calling for new space
+  //delete lst;            // Bad: trying to delete something that hasnt been initialized
+  //delete_list1(lst);     // Bad: same as above, but also lst is uninitialized
 
   lst = new Student({ "Joe", 1234, nullptr });
   delete_list1(lst);    // Bad: delete list1 is broken
