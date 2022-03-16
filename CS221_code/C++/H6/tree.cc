@@ -1,51 +1,45 @@
 #include "tree.hh"
 #include <string>
 
-
 /////////////////////////////////////////////////////////////////////////////
-//Travel Function
-
-tree_ptr_t traverse(tree_ptr_t tree){
+//Travel Function 			//NOTE: this function is no longer being used
+/*
+tree_ptr_t traverse(tree_ptr_t tree){ 	// This is a function to travel the tree
 	
-	if(!tree -> left_){
+	if(tree -> left_){ 		// Checks if there is a node to the left
     		return tree -> left_;
 	}
-	if(!tree -> right_){
+	if(tree -> right_){ 		// Checks if there is a node to the right
 		return tree -> right_;
 	}
-	return nullptr;
+	return nullptr; 		// If no nodes are there, then return null
 
 }
-
+*/
 //////////////////////////////////////////////////////////////////////////////
 tree_ptr_t
-create_tree(const key_type& key,
+create_tree(const key_type& key, 		// This function creates a new node
             const value_type& value,
             tree_ptr_t left_,
             tree_ptr_t right_)
 {
-    Tree* new_tree = new Tree({key, value, left_, right_});
-    return new_tree;
+    Tree* new_tree = new Tree({key, value, left_, right_}); 	// create the node
+    return new_tree; 						// return the node
 }
 
 
 //////////////////////////////////////////////////////////////////////////////
 void
-destroy_tree(tree_ptr_t tree)
+destroy_tree(tree_ptr_t tree) 	// This function is for destroying a tree
 {
-	Tree* current = tree;
-	Tree* temp = tree;
-	if(!current){
-		return;
+	if(tree->left_){
+		destroy_tree(tree->left_);
 	}
-	while(!current -> left_ && !current -> right_){
-		while(!tree -> left_ && !tree -> right_){
-			temp = traverse(temp);
-		}
-		delete temp;
-		temp = current;
-	}
-
+	if(tree->right_){
+		destroy_tree(tree->right_);
+	}	
+	delete tree;
+	return;	
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -57,16 +51,26 @@ path_to(tree_ptr_t tree, key_type key)
 	if(tree->key_ == key){
 		return path;
 	}
-	else if(!tree->left_ && !tree->right_){
-		return path;
+	if(!tree->left_ && !tree->right_){
+		return "-";
 	}
-	else if(tree->left_){
-		path.push_back('L');
-		return path_to(tree->left_, key);
+	if(tree->left_){
+		std::cout<<"checking left \n";
+		std::string l_path = path_to(tree->left_, key);
+		if(l_path != "-") {
+			path = l_path;
+			path.push_back('L');
+			return path;
+		}
 	}
-	else if(tree->right_){
-		path.push_back('R');
-		return path_to(tree->left_, key);
+	if(tree->right_){
+		std::cout<<"checking right \n";
+		std::string r_path = path_to(tree->right_, key);
+		if(r_path != "-"){
+			path = r_path;
+			path.push_back('R');
+			return path;
+		}
 	}
 	return path;
 }

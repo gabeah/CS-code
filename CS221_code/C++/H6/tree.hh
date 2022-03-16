@@ -6,6 +6,11 @@
 
 #include <string>
 
+// Adding some include flags to make testing easier -Gabe
+#include <iostream>
+#include <cassert>
+
+// Back to regular programming
 using key_type = int;
 using value_type = uint64_t;
 
