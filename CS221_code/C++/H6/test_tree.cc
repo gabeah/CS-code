@@ -7,7 +7,7 @@
 
 int main() {
 	// This section creates a tree with a root at f, then tests if the tree
-	// was made correctly.
+	// was made correctly. (Please excuse all the early testing code)
 	Tree* a = create_tree(6,12,nullptr,nullptr);
 	std::cout<<"tree made\n";
 	Tree* b = create_tree(8,23,a,nullptr);
@@ -42,10 +42,14 @@ int main() {
 	std::cout<<path3<<"\n";
 
 	// Creates pointers for nodes that are found using 'node_at' then prints them
+	// it also takes the key at the node and returns it.
+	// Note: a segfault occurs if any of the follows didn't actually point to a node.
+	// This is because the assignment wanted the node, and in my testing I pulled a value
+	// from a node to make sure my code worked right.
 	Tree* follow = node_at(f,"LR");
 	Tree* follow2 = node_at(f,"LLL");
 	Tree* follow3 = node_at(f,"R");
-	Tree* follow4 = node_at(f,"");
+	Tree* follow4 = node_at(f,"RL");
 
 	std::cout<<follow->key_<<"\n";
 	std::cout<<follow2->key_<<"\n";

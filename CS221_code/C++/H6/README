@@ -1,5 +1,17 @@
 README for HW6: Trees, trees everywhere!
 
-Created by: Gabe H and Julia B
+Created by: Gabe H and Julia O
 
+Thanks to tutors Callie and Becca :)
+
+The following code is to manipulate trees.
+
+Our design logic was at first to use loops, but then recursivity decided that our lives would
+be much simpler if we just did recursion.
+
+How to build: We tried using Make, but after strange errors that had even the tutors confused,
+we resorted to using regular ol' g++ and flags.
+
+This was the command we used to compile our code:
+g++ -g -Wall -Wextra -pedantic -std=c++17 -O3 -o tree test_tree.cc tree.cc
 
