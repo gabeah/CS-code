@@ -1,0 +1,26 @@
+CSCI 221 - HW8
+By: Yik Yin Cheuk
+
+This homework is pain. 
+
+forest.hh/.cc and htree.hh/.cc:
+These files were provided by Eitan and no changes were made. 
+
+huffman.hh:
+Defines the huffman class. 
+Private method createTree builds the huffman tree, and the other two private members stores the frequency table and the huffman tree for encode and decode.
+
+huffman.cc:
+The constructor uses the assign function to set the initial frequency of every character to 0. 
+The encode method relies on the possible_path_to method from the Tree class. Then, I converted the vector of Direction to a vector of bool.
+The decode method traverses the tree to locate the symbol that it represents. 
+The buildTree method is basically the "main" of the class. I haven't fully debugged this method, due to some technical errors that I (along with other people) were not able to figure out. 
+
+BitInput:
+
+
+BitOutput:
+
+
+Table:
+Filename		Raw file size		Compressed file size		Decompressed file

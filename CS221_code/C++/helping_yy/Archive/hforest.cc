@@ -1,3 +1,6 @@
+// CS221 HW8 - Huffman Encoding (hforest.cc)
+// By Yik Yin Cheuk (Eitan's Solution)
+
 /*
  * HForest: a class to represent a collection of HTrees, each with an
  * associated value (inverse priority).
@@ -39,4 +42,3 @@ HForest::pop_top()
   trees_.pop_back();
   return ret;
 }
-

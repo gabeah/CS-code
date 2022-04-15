@@ -1,3 +1,6 @@
+// CS221 HW8 - Huffman Encoding (test_bitio.cc)
+// By Yik Yin Cheuk
+
 /*
  * Unit tests for class BitIO
  */
@@ -9,15 +12,11 @@
 
 //////////////////////////////////////////////////////////////////////////////
 void
-test_1_bit()
-{
-  std::stringstream bits;
-
-  {
+test_1_bit() {
+  std::stringstream bits; {
     BitOutput bito(bits);
     bito.output_bit(1);
   } // Need to call bito's destructor here
-
   BitInput biti(bits);
   assert(biti.input_bit() == true);
   assert(biti.input_bit() == false);  // Should just be a trailing zero
@@ -26,18 +25,14 @@ test_1_bit()
 
 //////////////////////////////////////////////////////////////////////////////
 void
-test_4_bits()
-{
-  std::stringstream bits;
-
-  {
+test_4_bits() {
+  std::stringstream bits; {
     BitOutput bito(bits);
     bito.output_bit(0);
     bito.output_bit(1);
     bito.output_bit(0);
     bito.output_bit(1);
   }
-
   BitInput biti(bits);
   assert(biti.input_bit() == false);
   assert(biti.input_bit() == true);
@@ -51,7 +46,6 @@ void
 test_8_bits()
 {
   std::stringstream bits0, bits1;
-
   {
     BitOutput bito0(bits0);
     BitOutput bito1(bits1);
@@ -137,7 +131,6 @@ test_100_bits()
   }
   assert(!biti.input_bit());
 }
-
 
 //////////////////////////////////////////////////////////////////////////////
 int

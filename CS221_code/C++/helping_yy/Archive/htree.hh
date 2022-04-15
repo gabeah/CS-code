@@ -1,3 +1,6 @@
+// CS221 HW8 - Huffman Encoding (htree.hh)
+// By Yik Yin Cheuk (Eitan's Solution)
+
 /*
  * HTree: a class to represent a tree node with two values: a key
  * and a value.

@@ -1,3 +1,6 @@
+// CS221 HW8 - Huffman Encoding (hforest.hh)
+// By Yik Yin Cheuk (Eitan's Solution)
+
 /*
  * HForest: a class to represent a collection of HTrees, each with an
  * associated priority (lower value is higher priority)

@@ -1,3 +1,6 @@
+// CS221 HW8 - Huffman Encoding (test_huffman.cc)
+// By Yik Yin Cheuk
+
 /*
  * test_huffman: test the Huffman class
  */
@@ -9,8 +12,7 @@
 
 //////////////////////////////////////////////////////////////////////////////
 // Ensure the encoder actually modifies the coding' length as expected
-void test_encode()
-{
+void test_encode() {
   Huffman huff;
 
   auto bits = huff.encode('a');
@@ -37,8 +39,7 @@ void test_encode()
 //////////////////////////////////////////////////////////////////////////////
 // A utility function that takes a collection of bits and a Huffman tree, and
 // figures out which symbol these bits encode.
-int decode_symbol(Huffman& huff, const Huffman::bits_t& bits)
-{
+int decode_symbol(Huffman& huff, const Huffman::bits_t& bits) {
   int symbol = -1;
 
   for (auto b : bits) {
@@ -51,8 +52,7 @@ int decode_symbol(Huffman& huff, const Huffman::bits_t& bits)
 //////////////////////////////////////////////////////////////////////////////
 // Ensure decoding returns the same symbol that was encoded, in different
 // scenarios.
-void test_decode()
-{
+void test_decode() {
   Huffman encoder, decoder;
 
   auto bits = encoder.encode('a');
@@ -68,10 +68,8 @@ void test_decode()
 }
 
 //////////////////////////////////////////////////////////////////////////////
-int main()
-{
+int main() {
   test_encode();
   test_decode();
   return 0;
 }
-
